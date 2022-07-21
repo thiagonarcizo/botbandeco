@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from os import access
 import tweepy
 from datetime import date
@@ -11,7 +13,7 @@ api_key_file = open('api_key.txt', 'r', encoding='utf-8')
 api_key = api_key_file.read()
 api_key_file.close()
 
-api_key_secret_file = open('api_key_secret.txt', 'r', encoding='utf-8')
+api_key_secret_file = open('api_secret_key.txt', 'r', encoding='utf-8')
 api_secret_key = api_key_secret_file.read()
 api_key_secret_file.close()
 
@@ -51,13 +53,13 @@ text_dinner_v.close()
 
 
 #Escreve o texto de cada Tweet:
-almoco = 'Bandeco de hoje ('+data_em_texto+'):\n\nAlmoço:\n\n'+text_lunch_r
+almoco = 'Bandeco de hoje ('+data_em_texto+'):\n\nAlmoço:\n\n'+text_lunch_r.replace('\"','')
 
-almoco_v = 'Almoço Vegetariano:\n\n'+text_lunch_v_r
+almoco_v = 'Almoço Vegetariano:\n\n'+text_lunch_v_r.replace('\"','')
 
-janta = 'Janta:\n\n'+text_dinner_r
+janta = 'Janta:\n\n'+text_dinner_r.replace('\"','')
 
-janta_v = 'Janta Vegetariana:\n\n'+text_dinner_v_r
+janta_v = 'Janta Vegetariana:\n\n'+text_dinner_v_r.replace('\"','')
 
 
 
